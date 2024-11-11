@@ -93,12 +93,12 @@ def player_worker_decode(
     throttle_playback,
     loop_playback,
 ):
-    audio_sample_rate = 48000
+    audio_sample_rate = 16000 #48000
     audio_samples = 0
     audio_time_base = fractions.Fraction(1, audio_sample_rate)
     audio_resampler = av.AudioResampler(
         format="s16",
-        layout="stereo",
+        layout="mono", #"stereo",
         rate=audio_sample_rate,
         frame_size=int(audio_sample_rate * AUDIO_PTIME),
     )
